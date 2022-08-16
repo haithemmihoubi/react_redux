@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {Profile} from "./Profile";
 import Login from "./Login";
+import {store} from "./Store";
+import {Provider} from "react-redux";
 
-class App extends Component {
-    render() {
+function App() {
         return (
             <div className="App">
-                <Profile/>
-                <Login/>
+                <Provider store={store}>
+                    <Profile />
+                    <Login/>
+                </Provider>
             </div>
         );
-    }
 }
 
 export default App;
